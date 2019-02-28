@@ -127,7 +127,7 @@ class fe_initialize(object):
                 else:
                     k = (k,)
                     fun_tup = False
-                e = con[k].expr.args[0]
+                e = con[k].expr._args[0]
                 e_dict[k] = e * self.mod.h_i[k[0]] + dv[k] * (1 - self.mod.h_i[k[0]]) == 0.0  #: As long as you don't clone
             if fun_tup:
                 self.mod.add_component(i + "_deq_aug",
@@ -549,7 +549,7 @@ class fe_initialize(object):
                                         idx = (curr_time,) +  knew
                                         con[idx].deactivate()
                                         e=con[idx].expr.clone()
-                                        e.args[0].args[1]=vdummy
+                                        e._args[0]._args[1]=vdummy
                                         con[idx].set_value(e)
                                         conlist.add(con[idx].expr)
                     kn=kn+1

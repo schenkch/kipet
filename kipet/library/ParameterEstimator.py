@@ -841,7 +841,7 @@ class ParameterEstimator(Optimizer):
                                         idx = (curr_time,) + knew
                                         con[idx].deactivate()
                                         e = con[idx].expr.clone()
-                                        e.args[0].args[1] = vdummy
+                                        e._args[0]._args[1] = vdummy
                                         con[idx].set_value(e)
                                         conlist.add(con[idx].expr)
                     kn = kn + 1
