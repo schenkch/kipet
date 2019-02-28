@@ -4,8 +4,8 @@ from __future__ import print_function
 from pyomo.environ import *
 from pyomo.dae import *
 from pyomo.opt import SolverFactory, ProblemFormat, TerminationCondition
-from pyomo import *
-#from pyomo.core.kernel.numvalue import value as value
+#from pyomo import *
+from pyomo.core.kernel.numvalue import value as value
 from os import getcwd, remove
 import sys
 import six
